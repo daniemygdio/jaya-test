@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_042124) do
+ActiveRecord::Schema.define(version: 2019_04_12_161706) do
 
   create_table "octoevents", force: :cascade do |t|
-    t.integer "issue"
-    t.string "github_action"
+    t.integer "issue_number"
+    t.string "issue_action"
     t.string "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
