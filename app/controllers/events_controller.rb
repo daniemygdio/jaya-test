@@ -6,11 +6,13 @@ class EventsController < ApplicationController
 
     def create
         @octoevent = Octoevent.new()
-        @octoevent.github_action = request.request_parameters['action']
+        @octoevent.issue_action = request.request_parameters['action']
 
-        params.require(:issue).permit(:url, :number).tap do |events_params|
+        params.require(:issue).permit(:url, :number, :created_at, :updated_at).tap do |events_params|
             @octoevent.url = events_params.require(:url)
-            @octoevent.issue = events_params.require(:number)
+            @octoevent.issue_number = events_params.require(:number)
+            @octoevent.created_at = events_params.require(:created_at)
+            @octoevent.updated_at = events_params.require(:updated_at)
         end
 
         if @octoevent.save

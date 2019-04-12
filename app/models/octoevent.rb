@@ -1,3 +1,3 @@
 class Octoevent < ApplicationRecord
-    validates :issue, :github_action, :url, presence: true
+    validates :issue_number, :issue_action, :url, :created_at, :updated_at, presence: true
 end
