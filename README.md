@@ -8,7 +8,7 @@ This is a test for Jaya. Octo Events is an application that listens to GitHub ev
 
 ## Services
 
-|HTTP verb|Route|Description|
+|HTTP verb|URI|Description|
 |---------|:----|:----------|
 |POST|/events|Receives data from GitHub webhooks and saves it.
 |GET|/events|Returns a list of all the stored issues data.|
