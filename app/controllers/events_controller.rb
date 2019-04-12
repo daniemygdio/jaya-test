@@ -1,7 +1,4 @@
 class EventsController < ApplicationController
-    protect_from_forgery prepend: true
-    before_action :authenticate_with_http_digest
-    
     def index
         @octoevent = Octoevent.all
         render json: @octoevent
