@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class EventsController < AdminsController
     def index
         @octoevent = Octoevent.all
         render json: @octoevent
