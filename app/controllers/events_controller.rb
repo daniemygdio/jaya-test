@@ -23,7 +23,7 @@ class EventsController < AdminsController
     end
 
     def show
-        @octoevent = Octoevent.find_by(issue: params[:id])
+        @octoevent = Octoevent.find_by(issue_number: params[:id])
         render json: @octoevent
     end
 end
