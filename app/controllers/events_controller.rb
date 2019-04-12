@@ -3,6 +3,8 @@ class EventsController < ApplicationController
     before_action :authenticate_with_http_digest
     
     def index
+        @octoevent = Octoevent.all
+        render json: @octoevent
     end
 
     def create
@@ -15,12 +17,14 @@ class EventsController < ApplicationController
         end
 
         if @octoevent.save
-            render json:{"message":"success"}, status 200 
+            render json:{"message":"success"}
         else
             render json:{"message":"error"} 
         end
     end
 
     def show
+        @octoevent = Octoevent.find_by(issue: params[:id])
+        render json: @octoevent
     end
 end
